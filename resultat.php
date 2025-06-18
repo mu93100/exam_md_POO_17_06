@@ -54,7 +54,7 @@ final class Chien extends AnimalCompagnie{
     public const ESPECE = "Canidé";
 
     public function crier() {
-        echo "{$this->nom} fait <strong style='color: pink;'> Wouf Wouf</strong>";
+        echo "{$this->nom} fait <strong style='color: pink;'> Wouf Wouf</strong>"; //return "wouf";
     }
 }
 
@@ -84,3 +84,4 @@ final class Perroquet extends AnimalCompagnie{
     }
 }
 ?>
+<!-- // logique CREATE READ DELETE UPDATE -->
