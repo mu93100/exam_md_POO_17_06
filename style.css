@@ -3,29 +3,40 @@
 }
 
 body{
+    width: 90rem;
+    height: 200rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #cfbf2e;
+    /* background-image: linear-gradient(to bottom, rgba(255,128,255,0.5), rgba(0,0,128,0.5)), url('image.jpg'); */
 }
-
 form{
     width: 50%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background-color: white;
+    /* background-color: white; */
     border: 3px solid black;
     border-radius: 0.5rem;
     padding: 2rem;
+    background-image: url(./fd.webp.webp);
 }
 button {
     align-self: center;
     background-color: white;
     border: 3px solid black;
-    border-radius: 0.5rem;
+    border-radius: 0 0 2rem;
     padding: 2rem
 }
-
+.btDelete{
+    align-self: start;
+    background-image: url(./img/stripes.png);
+    background-size: initial;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+}
 select {
     background-color: white;
     color: rgb(252, 6, 6);
@@ -50,7 +61,7 @@ select:focus {
 }
 
 ::selection {
-    background: yellow;
+    background: #ffff00;
     /* couleur de fond */
     /* couleur du texte */
 }
@@ -64,6 +75,14 @@ select:focus {
 input::placeholder,
 textarea::placeholder {
     color: rgb(243, 140, 157);
-    opacity: 1;
-    
+    opacity: 1; 
 } 
+
+.animal-modified {
+    color: #fff;
+    background: #cfbf2e;
+    border: 2px solid #cfbf2e;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: background 0.3s, color 0.3s;
+}

@@ -1,11 +1,10 @@
-<!-- ### 🔹 2. `resultat.php`
+<!-- ### 🔹 2. `classe.php`
 
 Contient la **logique métier (POO)** :
 -->
 
 <?php   
 
-// include "session.php"; // recupération des classes issu d'un autre fichier
 
 
 
@@ -46,7 +45,7 @@ abstract class AnimalCompagnie{
         return get_class($this);
     }
     public function crier() {
-        echo '{$this->nom}  ???';
+        return '{$this->nom}  ???'; // j'ai changé echo en return!!!!!!!!!!!!!
     }
 }
 
@@ -54,7 +53,7 @@ final class Chien extends AnimalCompagnie{
     public const ESPECE = "Canidé";
 
     public function crier() {
-        echo "{$this->nom} fait <strong style='color: pink;'> Wouf Wouf</strong>"; //return "wouf";
+        echo "<strong style='color: pink; font-size: 2.5rem; text-shadow: -1px -1px 0  #ffff00, 1px -1px 0  #cfbf2e, -1px 1px 0 #000, 1px 1px 0 #000; '> Wouf Wouf</strong>"; 
     }
 }
 
@@ -80,7 +79,7 @@ final class Perroquet extends AnimalCompagnie{
     public const ESPECE = "Oiseau";
 
     public function crier(){
-        echo "{$this->nom} fait <strong style='color: blue;'> Cui Cui</strong>";
+        echo ucfirst($this->nom) ." fait <strong style='color: blue;'> Cui Cui</strong>";
     }
 }
 ?>
