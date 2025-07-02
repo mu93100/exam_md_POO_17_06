@@ -1,8 +1,9 @@
 <!-- CRUD -->
 
 <?php
-session_start();
 include_once "classe.php";
+session_start();
+
 
 // CREATION D'UN OBJET AVEC UN FORMULAIRE 
 

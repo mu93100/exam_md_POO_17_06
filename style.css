@@ -1,18 +1,24 @@
-* { 
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
 body{
-    width: 90rem;
-    height: 200rem;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #cfbf2e;
-    /* background-image: linear-gradient(to bottom, rgba(255,128,255,0.5), rgba(0,0,128,0.5)), url('image.jpg'); */
+    gap: 1rem
+    ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: end;
+    /* rgb(238, 247, 245)   rgb(49, 248, 205)  rgb(9, 110, 88)*/
+    background-image: linear-gradient(to bottom, rgb(238, 247, 245)  , rgba(253, 253, 253, 0) 50%), url(./img/fd.webp); 
 }
 form{
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -20,57 +26,77 @@ form{
     border: 3px solid black;
     border-radius: 0.5rem;
     padding: 2rem;
-    background-image: url(./fd.webp.webp);
+    background-color: white;
+    box-shadow: 2px 8px 4px rgba(0,0,0);
+    /* box-shadow: 8px 6px 5px red; */
+}
+.formDelete{
+    width: 40%;
+    background: none;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem; margin: 1rem;
+}
+.formUpdate{
+    background-image: url(./img/fdUpdate.png);
+    /* background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./img/fdUpdate.png); */
+    background-size: cover;
 }
 button {
     align-self: center;
     background-color: white;
     border: 3px solid black;
-    border-radius: 0 0 2rem;
+    border-radius: 0 0 1rem 1rem;
     padding: 2rem
 }
 .btDelete{
-    align-self: start;
-    background-image: url(./img/stripes.png);
-    background-size: initial;
+    width: 80%;
+    align-self: center; 
+    background-color: transparent;
+    color: white;
+    /* background-image: url(./img/Capture\ d\'écran\ 2025-07-01\ 135032.png); 
+    background-size: cover; */
+    /* font-weight: bold; */
+    /* color: rgb(0, 0, 0); */
+    font-size: .9rem;
+    /* text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; */
+    /* background-image: url(./img/stripes.png);  */
+    /* background-size: initial; */
     border-radius: 0.5rem;
     padding: 0.5rem;
     border: none;
+    
 }
 select {
     background-color: white;
     color: rgb(252, 6, 6);
-    border: 1px solid #888;
+    /* border: 1px solid #888; */
 }
 p{
-    font-family: "Coiny", system-ui;
-    font-weight: 400;
-    font-style: normal;
+    align-items: center;
 }
 .p1{
     padding: 0.01rem 0.5rem;
 }
-.font{
-    font-family: "Coiny", system-ui;
-    font-style: normal; 
+/* apparence de <select> quand activé/ marche pas avec tous les navigateurs */
+select {
+    background-color: white;
+    border: 1px solid #888;
 }
-
 select:focus {
-    outline: none;
-    box-shadow: none;
+    outline: none;        /* Enlève le contour */
+    box-shadow: none;     /* Enlève l'ombre éventuelle */
+    background-color: white; /* Remplace le fond bleu par blanc */
 }
-
+/* apparence de texte sélectionné par l’utilisateur sur page web */
 ::selection {
     background: #ffff00;
     /* couleur de fond */
     /* couleur du texte */
 }
-
 ::-moz-selection {
-    background: #cfbf2e;
-    color: #fff;
+    background: #ffff00;
 }
-
 
 input::placeholder,
 textarea::placeholder {
@@ -85,4 +111,32 @@ textarea::placeholder {
     padding: 1rem;
     border-radius: 1rem;
     transition: background 0.3s, color 0.3s;
+}
+
+
+/* POLICES */
+.rubik{
+    font-family: "Rubik Beastly", system-ui;
+    font-weight: 400;
+    font-size: 4rem;
+    font-style: normal;
+    color: aquamarine;
+    text-shadow: -1px -1px 0  #ffff00, 1px -1px 0  #cfbf2e, -1px 2px 0 #000, 1px 2px 0 #000;
+    letter-spacing: 0.3rem;
+}
+.montserrat {
+    font-family: "Montserrat Underline", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 620;
+    font-size: 5rem;
+    color: blue;
+    text-shadow: 2px -2px 3px white, 4px -4px 3px white, 6px -6px 3px white, 5px 0 10px blue; ;
+}
+.coiny{
+    font-family: "Coiny", system-ui;
+    letter-spacing: .05rem;
+    /* text-shadow: 1px -2px 0 white; */
+}
+span{
+    color: rgb(243, 140, 157);
 }

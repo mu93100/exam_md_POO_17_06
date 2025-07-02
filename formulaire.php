@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>exam_md_POO_17_06</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php   
@@ -27,41 +29,37 @@ si on reste sur la m^p. :::
 <!-- <form method="post" action="">  ===Action vers la même page -->
 
 <!-- sinon ::: <form method="post" action="session.php"> --> 
-
+<h2 class="coiny">Mon Animal de compagnie 💗</h2>
 <!-- CREATE -->
     <form method="post" action="formulaire.php">
         <!-- <input type="hidden" for="nouvelAnimal" > -->
-        <select class="font p1" name="nouvelAnimal" required>
-            <option  value="">Sélectionne ton animal --></option>
+        <select class="coiny p1" name="nouvelAnimal" required>
+            <option value="">Sélectionne ton animal --></option>
             <option value="Chat">Chat</option>
             <option value="Chien">Chien</option>
             <option value="Perroquet">Perroquet</option>
         </select>
-        <input class="font p1" type="text" name="nom" placeholder="Nom" required>
-        <input class="font p1" type="text" name="age" placeholder="Age" required>
-        <input class="font p1" type="text" name="poids" placeholder="Poids" required>
+        <input class="p1" type="text" name="nom" placeholder="Nom" required>
+        <input class="p1" type="text" name="age" placeholder="Age" required>
+        <input class="p1" type="text" name="poids" placeholder="Poids" required>
     
         <button type="submit" name="action" value="create">Enregistre ton animal favori</button>
     </form>
 
 <?php if (isset($nouvelAnimal)) : ?>
-    <p>Ton animal 💗 est un  <?= $nouvelAnimal->getTypeAnimal() ?>  de <?= $nouvelAnimal->getAge() ?> ans et <?= $nouvelAnimal->getPoids() ?> kg
-    <!-- <br>Il s'appelle <?= ucfirst($nouvelAnimal->getNom())?> <br><?= $nouvelAnimal->crier() ?></p> -->
-
+    <p class="coiny">Ton animal 💗 est <span><?= ucfirst($nouvelAnimal->getNom())?></span>
+    <br>un  <?= $nouvelAnimal->getTypeAnimal() ?>  de <?= $nouvelAnimal->getAge() ?> ans et <?= $nouvelAnimal->getPoids() ?> kg 
     <br><?= $nouvelAnimal->crier() ?>
     </p>
+
 <!-- DELETE --> 
-    <form style="border: none;
-            border-radius: 1rem;
-            padding: 0.5rem; margin: 1rem;" 
-            method="post" action="formulaire.php">
-        <button class="btDelete" type="submit" name="action" value="delete"
-            style="align-self: center; font-weight: 500; background-image: url(./img/Capture\ d\'écran\ 2025-07-01\ 135237.png); background-size: cover;" >Supprime ton animal
-        </button>
-    </form>     
+    <form class="formDelete" method="post" action="formulaire.php">
+        <button class="btDelete coiny" type="submit" name="action" value="delete">Supprime ton animal</button>
+    </form>    
+    
 <!-- UPDATE -->     
-    <form method="post" action="formulaire.php" >
-        <h3 class="font p1">Modifie ton animal favori</h3>
+    <form class="formUpdate" method="post" action="formulaire.php" >
+        <h3 class="coiny p1">Modifie ton animal favori</h3>
         <select name="nouvelAnimal" required>
             <option value="<?= $nouvelAnimal->getTypeAnimal() ?>"><?= $nouvelAnimal->getTypeAnimal() ?></option>
             <!-- il y a 2 fois $nouvelAnimal->getTypeAnimal() car 1er = typeAnimal obtenu par get (->à modifier)  
@@ -74,7 +72,7 @@ si on reste sur la m^p. :::
         <button type="submit" name="modifier" value="update">Mettre à jour</button>    
     </form>
 
-    <p class="<?= $animalUpdated ? 'animal-modified' : '' ?>">
+    <p class="coiny" <?= $animalUpdated ? 'animal-modified' : '' ?>">
     Ton animal favori modifié est un <?= $nouvelAnimal->getTypeAnimal() ?> de <?= $nouvelAnimal->getAge() ?> ans et <?= $nouvelAnimal->getPoids() ?> kg
     <br>Il s'appelle <?= ucfirst($nouvelAnimal->getNom())?>
     <br><?= $nouvelAnimal->crier() ?>
