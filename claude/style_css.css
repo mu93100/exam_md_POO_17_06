@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #cfbf2e;
+    background-image: linear-gradient(135deg, #cfbf2e 0%, #ffff00 100%);
+    font-family: "Coiny", system-ui, Arial, sans-serif;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 1rem;
+}
+
+h2, h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Styles des formulaires */
+form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 3px solid #333;
+    border-radius: 1rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.create-form {
+    background-image: url('./img/fd.webp');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.update-form {
+    background: rgba(207, 191, 46, 0.1);
+    border: 2px solid #cfbf2e;
+}
+
+/* Styles des inputs */
+input, select, textarea {
+    padding: 0.8rem;
+    border: 2px solid #333;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #cfbf2e;
+    box-shadow: 0 0 0 3px rgba(207, 191, 46, 0.3);
+}
+
+select {
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+/* Styles des boutons */
+button {
+    align-self: center;
+    background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+    border: 3px solid #333;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #cfbf2e 0%, #ffff00 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btDelete {
+    align-self: flex-start;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+    color: white;
+    border: 2px solid #d32f2f;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.btDelete:hover {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+}
+
+/* Informations sur l'animal */
+.animal-info {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 3px solid #333;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.animal-details {
+    background: rgba(207, 191, 46, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.animal-details p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.animal-cry {
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5rem;
+}
+
+.animal-modified {
+    animation: highlight 2s ease-in-out;
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    color: white;
+    border-color: #4caf50;
+}
+
+.animal-modified p {
+    color: white;
+}
+
+@keyframes highlight {
+    0% { 
+        background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+        transform: scale(1.02);
+    }
+    50% { 
+        background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+        transform: scale(1.05);
+    }
+    100% { 
+        background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+        transform: scale(1);
+    }
+}
+
+/* Styles pour les polices */
+.font {
+    font-family: "Coiny", system-ui;
+    font-style: normal;
+}
+
+.p1 {
+    padding: 0.01rem 0.5rem;
+}
+
+/* Placeholders */
+input::placeholder,
+textarea::placeholder {
+    color: rgba(243, 140, 157, 0.8);
+    opacity: 1;
+}
+
+/* Sélection de texte */
+::selection {
+    background: #ffff00;
+    color: #333;
+}
+
+::-moz-selection {
+    background: #cfbf2e;
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    form {
+        padding: 1.5rem;
+    }
+    
+    button {
+        padding: 0.8rem 1.5rem;
+    }
+}
