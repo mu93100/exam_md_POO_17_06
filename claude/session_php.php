@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "classe.php";
+include_once "classe_php.php";
 
 // Initialisation des variables
 $nouvelAnimal = $_SESSION['nouvelAnimal'] ?? null;

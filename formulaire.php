@@ -1,4 +1,4 @@
-
+<?php include "session.php"; ?> <!--  recupération des classes issues d'un autre fichier -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php   
-include "session.php"; // recupération des classes issues d'un autre fichier
-?>
+
     <!--CORRECTION MU Comment soumettre un formulaire à une autre page ?
 Lier le bouton Soumettre à une autre page à l'aide des balises de formulaire en HTML
 Ici, déclarez/écrivez le bouton « Envoyer » dans les balises de formulaire HTML et indiquez le chemin d'accès au fichier dans la propriété action du formulaire HTML . 
@@ -29,7 +27,7 @@ si on reste sur la m^p. :::
 <!-- <form method="post" action="">  ===Action vers la même page -->
 
 <!-- sinon ::: <form method="post" action="session.php"> --> 
-<h2 class="coiny">Mon Animal de compagnie 💗</h2>
+<h2 class="coiny">My Animal de compagnie 💗</h2>
 <!-- CREATE -->
     <form method="post" action="formulaire.php">
         <!-- <input type="hidden" for="nouvelAnimal" > -->
@@ -40,24 +38,44 @@ si on reste sur la m^p. :::
             <option value="Perroquet">Perroquet</option>
         </select>
         <input class="p1" type="text" name="nom" placeholder="Nom" required>
-        <input class="p1" type="text" name="age" placeholder="Age" required>
-        <input class="p1" type="text" name="poids" placeholder="Poids" required>
+        <input class="p1" type="text" name="age" placeholder="Âge en années" required>
+        <input class="p1" type="text" name="poids" placeholder="Poids en kg" required>
     
         <button type="submit" name="action" value="create">Enregistre ton animal favori</button>
     </form>
 
-<?php if (isset($nouvelAnimal)) : ?>
-    <p class="coiny">Ton animal 💗 est <span><?= ucfirst($nouvelAnimal->getNom())?></span>
-    <br>un  <?= $nouvelAnimal->getTypeAnimal() ?>  de <?= $nouvelAnimal->getAge() ?> ans et <?= $nouvelAnimal->getPoids() ?> kg 
-    <br><?= $nouvelAnimal->crier() ?>
-    </p>
+<?php if ($nouvelAnimal) : ?>
+    
 
+    <?php if ($animalUpdated): ?>
+        <p class="animal-modified">
+            Bravo, ton animal a été mis à jour :<br>
+            <?= htmlspecialchars($nouvelAnimal->getNom()) ?><br>
+            <?= htmlspecialchars($nouvelAnimal->getAge()) ?> ans<br>
+            <?= htmlspecialchars($nouvelAnimal->getPoids()) ?> kg
+        </p>
+    <?php else: ?>
+        
+        <p class="coiny">Ton animal 💗 est <span><?= ucfirst($nouvelAnimal->getNom())?></span>
+            <br>Un  <?= $nouvelAnimal->getTypeAnimal() ?>  de <?= $nouvelAnimal->getAge() ?> ans et <?= $nouvelAnimal->getPoids() ?> kg 
+            <br><?= $nouvelAnimal->crier() ?>
+        </p>
+        <p>
+            Ton animal 💗 est un <?= htmlspecialchars($nouvelAnimal->getTypeAnimal()) ?> de nom <?= htmlspecialchars($nouvelAnimal->getNom()) ?>, âgé de <?= htmlspecialchars($nouvelAnimal->getAge()) ?> ans, pesant <?= htmlspecialchars($nouvelAnimal->getPoids()) ?> kg.
+        </p>
+    <?php endif; ?>
+    
+    <p class="coiny" <?= $animalUpdated ? 'animal-modified' : '' ?>">
+    Ton animal favori modifié est un <?= $nouvelAnimal->getTypeAnimal() ?> de <?= $nouvelAnimal->getAge() ?> ans et <?= $nouvelAnimal->getPoids() ?> kg
+    <br>Il s'appelle <?= ucfirst($nouvelAnimal->getNom())?>
+    <br><?= $nouvelAnimal->crier() ?>
+<?php endif; ?>
 <!-- DELETE --> 
-    <form class="formDelete" method="post" action="formulaire.php">
-        <button class="btDelete coiny" type="submit" name="action" value="delete">Supprime ton animal</button>
+<form class="formDelete" method="post" action="formulaire.php">
+        <button class="btDelete coiny" type="submit" name="action" value="delete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet animal ?')">Supprime ton animal</button>
     </form>    
     
-<!-- UPDATE -->     
+    <!-- UPDATE -->     
     <form class="formUpdate" method="post" action="formulaire.php" >
         <h3 class="coiny p1">Modifie ton animal favori</h3>
         <select name="nouvelAnimal" required>
@@ -71,15 +89,6 @@ si on reste sur la m^p. :::
         <input type="text" name="poids" value="<?= $nouvelAnimal->getPoids() ?>">
         <button type="submit" name="modifier" value="update">Mettre à jour</button>    
     </form>
-
-    <p class="coiny" <?= $animalUpdated ? 'animal-modified' : '' ?>">
-    Ton animal favori modifié est un <?= $nouvelAnimal->getTypeAnimal() ?> de <?= $nouvelAnimal->getAge() ?> ans et <?= $nouvelAnimal->getPoids() ?> kg
-    <br>Il s'appelle <?= ucfirst($nouvelAnimal->getNom())?>
-    <br><?= $nouvelAnimal->crier() ?>
-
-
-<?php endif; ?>
-
 </body>
 </html>
 

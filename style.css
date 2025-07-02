@@ -133,8 +133,7 @@ textarea::placeholder {
 
 /* POLICES */
 .rubik{
-    font-family: "Rubik Beastly", system-ui;
-    font-weight: 400;
+    font-family: "Rubik Beastly";
     font-size: 4rem;
     font-style: normal;
     color: aquamarine;
@@ -150,7 +149,7 @@ textarea::placeholder {
     text-shadow: 2px -2px 3px white, 4px -4px 3px white, 6px -6px 3px white, 5px 0 10px blue; ;
 }
 .coiny{
-    font-family: "Coiny", system-ui;
+    font-family: "Coiny";
     letter-spacing: .05rem;
     /* text-shadow: 1px -2px 0 white; */
 }
