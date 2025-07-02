@@ -72,6 +72,14 @@ final class Perroquet extends AnimalCompagnie{
         return "<strong class='montserrat'> Cui Cui</strong>";
     }
 }
+final class Limace extends AnimalCompagnie{
+    public const ESPECE = "Mollusques";
+
+    public function crier(){
+        return "<strong class='montserrat'>Blop</strong>";
+    }
+}
+
 // verif class
 // $rex = new Chien("Rex", 12, 33.50);
 // $rex->crier();
