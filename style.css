@@ -4,12 +4,13 @@
     padding: 0;
 }
 body{
+    margin-top: 2rem;
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: end;
@@ -30,17 +31,17 @@ form{
     /* box-shadow: 8px 6px 5px red; */
 }
 .formDelete, #formUpdate{
-
     background: rgba(253, 253, 253, 0.15) ;
+    background-image: linear-gradient(rgba(253, 253, 253, 0.1), rgba(253, 253, 253, 0));
     border: none;
     border-radius: 1rem;
     padding: 0.5rem; 
     margin: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 #formUpdateFull{
-    background-image: url(./img/fdUpdate.png);
-    /* background-image: url(./img/fdUpdate2.png); */
+    /* background-image: url(./img/fdUpdate.png); */
+    background-image: url(./img/fdUpdate2.png);
     background-size: cover;
     /* text-shadow: -1px -1px 1px rgb(255, 255, 255, 0.4), 1px -1px 1px rgb(255, 255, 255, 0.4), -1px 1px 1px rgb(255, 255, 255, 0.4), 1px 1px 1px rgb(255, 255, 255, 0.4);  */
     border: 1px solid rgba(0, 0, 0, 0.089);
@@ -77,6 +78,7 @@ button {
     text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4), 1px -1px 1px rgb(0, 0, 0, 0.4), -1px 1px 1px rgb(0, 0, 0, 0.4), 1px 1px 1px rgb(0, 0, 0, 0.4); 
 }
 p{
+    font-size: 1.1rem;
     align-self: center;
     margin-top: 0.8rem;
 }
@@ -133,9 +135,9 @@ textarea::placeholder {
     font-size: 5rem;
 }
 span{
-    color: pink;
+    color: rgb(243, 140, 157);
     /* font-size: 2rem; */
-    text-shadow: -1px -1px 2px rgb(255, 255, 255, 0.2), 1px -1px 2px rgb(255, 255, 255, 0.2), -1px 1px 2px rgb(255, 255, 255, 0.2), 1px 1px 2px rgb(255, 255, 255, 0.2); 
+    text-shadow: -1px -1px 2px rgb(255, 255, 255, 0.3), 1px -1px 2px rgb(255, 255, 255, 0.3), -1px 1px 2px rgb(255, 255, 255, 0.3), 1px 1px 2px rgb(255, 255, 255, 0.3); 
 }
 /* span{
     color: pink; 
