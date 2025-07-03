@@ -14,15 +14,14 @@ body{
     background-repeat: no-repeat;
     background-position: end;
     /* rgb(238, 247, 245)   rgb(49, 248, 205)  rgb(9, 110, 88)*/
-    background-image: linear-gradient(to bottom, rgb(238, 247, 245)  , rgba(253, 253, 253, 0) 50%), url(./img/fd.webp); 
+    background-image: linear-gradient(to bottom, rgb(238, 247, 245), rgba(253, 253, 253, 0) 50%), url(./img/fd.webp); 
 }
 /*    FORM    */
 form{
-    width: 40%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* background-color: white; */
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 0.5rem;
     padding: 2rem;
@@ -30,23 +29,26 @@ form{
     box-shadow: 2px 8px 4px rgba(0,0,0);
     /* box-shadow: 8px 6px 5px red; */
 }
-.formDelete{
-    width: 40%;
-    background: none;
+.formDelete, #formUpdate{
+
+    background: rgba(253, 253, 253, 0.15) ;
     border: none;
     border-radius: 1rem;
     padding: 0.5rem; 
     margin: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
-.formUpdate{
-    /* background-image: url(./img/fdUpdate.png); */
-    background-image: url(./img/fdUpdate2.png);
-    /* background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./img/fdUpdate.png); */
+#formUpdateFull{
+    background-image: url(./img/fdUpdate.png);
+    /* background-image: url(./img/fdUpdate2.png); */
     background-size: cover;
-    text-shadow: -1px -1px 1px white, 1px -1px 1px white, -1px 1px 1px white, 1px 1px 1px white; 
+    /* text-shadow: -1px -1px 1px rgb(255, 255, 255, 0.4), 1px -1px 1px rgb(255, 255, 255, 0.4), -1px 1px 1px rgb(255, 255, 255, 0.4), 1px 1px 1px rgb(255, 255, 255, 0.4);  */
     border: 1px solid rgba(0, 0, 0, 0.089);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
+.hide {display: none !important;}
 select {
     background-color: white;
     color: rgb(252, 6, 6);
@@ -56,45 +58,30 @@ select {
 /*    BUTTON    */
 button {
     align-self: center;
-    /* background-color: white; */
     border: 1px solid #888;
-    /* border: 1px solid rgba(0, 0, 0, 0.06); */
     border-radius: 1rem;
-    /* border: 3px solid black; */
-    /* border-radius: 0 0 1rem 1rem; */
-    padding: 2rem;
-
-    /* border: 1px solid rgba(0, 0, 0, 0.05); */
-    /* border-radius: 0.5rem; */
+    padding: 0.7rem 2rem;
     background-color: white;
-    /* box-shadow: 2px 8px 4px rgba(0,0,0); */
 
 }
-.btDelete{
+.btDelete, #btUpdate{
     width: 80%;
     align-self: center; 
     background-color: transparent;
     color: white;
-    /* background-image: url(./img/Capture\ d\'écran\ 2025-07-01\ 135032.png); 
-    background-size: cover; */
-    /* font-weight: bold; */
-    /* color: rgb(0, 0, 0); */
-    font-size: 1.2rem;
-    /* text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; */
-    /* background-image: url(./img/stripes.png);  */
-    /* background-size: initial; */
+    font-size: 1.35rem;
+    line-height: 1.4;
     border-radius: 0.5rem;
     padding: 0.5rem;
     border: none;
-    /* text-shadow: -1px -1px 1px rgb(0, 0, 0), 1px -1px 1px rgb(0, 0, 0), -1px 1px 1px rgb(0, 0, 0), 1px 1px 1px rgb(0, 0, 0);  */
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4), 1px -1px 1px rgb(0, 0, 0, 0.4), -1px 1px 1px rgb(0, 0, 0, 0.4), 1px 1px 1px rgb(0, 0, 0, 0.4); 
 }
-
-p, h3{
+p{
     align-self: center;
+    margin-top: 0.8rem;
 }
-/* .p1{
-    padding: 0.01rem 0.5rem;
-} */
+.p1{padding: 0.2rem 0.5rem 0.01rem 0.5rem;}
+
 /* apparence de <select> quand activé/ marche pas avec tous les navigateurs */
 select {
     background-color: white;
@@ -105,31 +92,19 @@ select:focus {
     box-shadow: none;     /* Enlève l'ombre éventuelle */
     background-color: white; /* Remplace le fond bleu par blanc */
 }
+
 /* apparence de texte sélectionné par l’utilisateur sur page web */
 ::selection {
     background: #ffff00;
-    /* couleur de fond */
-    /* couleur du texte */
 }
 ::-moz-selection {
     background: #ffff00;
 }
-
 input::placeholder,
 textarea::placeholder {
     color: rgb(243, 140, 157);
     opacity: 1; 
 } 
-
-.animal-modified {
-    color: #fff;
-    background: #cfbf2e;
-    border: 2px solid #cfbf2e;
-    padding: 1rem;
-    border-radius: 1rem;
-    transition: background 0.3s, color 0.3s;
-}
-
 
 /* POLICES */
 .rubik{
@@ -150,9 +125,21 @@ textarea::placeholder {
 }
 .coiny{
     font-family: "Coiny";
-    letter-spacing: .05rem;
+    letter-spacing: .04rem;
     /* text-shadow: 1px -2px 0 white; */
 }
-span{
-    color: rgb(243, 140, 157);
+.honk {
+    font-family: "Honk";
+    font-size: 5rem;
 }
+span{
+    color: pink;
+    /* font-size: 2rem; */
+    text-shadow: -1px -1px 2px rgb(255, 255, 255, 0.2), 1px -1px 2px rgb(255, 255, 255, 0.2), -1px 1px 2px rgb(255, 255, 255, 0.2), 1px 1px 2px rgb(255, 255, 255, 0.2); 
+}
+/* span{
+    color: pink; 
+    font-size: 2.5rem; 
+    text-shadow: -1px -1px 0  #ffff00, 1px -1px 0  #cfbf2e, -1px 1px 0 #000, 1px 1px 0 #000; 
+} */
+@media

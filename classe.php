@@ -45,7 +45,7 @@ final class Chien extends AnimalCompagnie{
     public const ESPECE = "Canidé";
 
     public function crier() {
-        return "<strong style='color: pink; font-size: 2.5rem; text-shadow: -1px -1px 0  #ffff00, 1px -1px 0  #cfbf2e, -1px 1px 0 #000, 1px 1px 0 #000;'>Wouf Wouf</strong>"; 
+        return "<strong  style='color: pink; font-size: 2.5rem; text-shadow: -1px -1px 0  #ffff00, 1px -1px 0  #cfbf2e, -1px 1px 0 #000, 1px 1px 0 #000;'>Wouf Wouf</strong>"; 
     }
 }
 
@@ -68,7 +68,7 @@ final class Limace extends AnimalCompagnie{
     public const ESPECE = "Mollusques";
 
     public function crier(){
-        return "<strong class='montserrat'>Blop</strong>";
+        return "<strong class='honk'>Blop</strong>";
     }
 }
 
